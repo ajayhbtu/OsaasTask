@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div width="100%" style="text-align:center;">
+<div style="max-width:500px; border-style:solid;border-width: 5px; min-height: 400px; border-radius: 10px; padding:20px;font-size: :20px; text-align:left; margin:0 auto;">
+
+<h1 style="text-align:center;"> Welcome to NMAP Scanner </h1>
+
+<form action="scanip" method = 'post'>
+	{% csrf_token %}
+	<table style="padding-bottom: 10px;"><tr>
+		<td><label style="font-size: 22px;">Enter IP Address:</label></td>
+		<td> <input type="text" name="ipadr" style="width:160px;font-size: 20px;"></td>
+
+	</tr>
+<tr>
+	<td><label style="font-size: 22px;">NMAP Options:</label>
+	</td>
+	<td>
+		<select id = "options" style="width:160px;font-size: 20px;">
+	   <option value = "-sV">-sV</option>
+	   <option value = "-A">-A</option>
+	   <option value = "-O">-O</option>
+	 </select>
+	</td>
+
+	</tr>
+</table>
+	 <input type="submit" style="width:120px;font-size: 20px;  border-radius: 5px; ">
+</form>
+</div>
+
+
+{% endblock %}
